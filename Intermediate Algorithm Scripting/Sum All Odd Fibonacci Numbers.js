@@ -4,7 +4,7 @@
 //the code with PROBLEM is at the bottom
 function sumFibs(num) {
   
-  let fibArr = [1, 1]; // Initialize the array with the first two Fibonacci numbers
+  let fibArr = [1, 1]; // Initialize the array with the first two Fibonacci numbers. I'm not sure this is correct according to the Fibonacci sequence but it is for the purpose of this exercise
   let sumOdd = 0;
 
   if(num <= 2) {
