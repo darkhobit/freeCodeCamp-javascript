@@ -17,7 +17,7 @@ function translatePigLatin(str) {
     finalStr = myStr.concat(['ay']).join('');
   }
   return finalStr;
-};
+}
 
 function pigLatin(arry) {
     if(arry[0] == 'a' ||
