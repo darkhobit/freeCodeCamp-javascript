@@ -1,7 +1,7 @@
 //https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/intermediate-algorithm-scripting/sum-all-odd-fibonacci-numbers
 
 //this code was made with the help of ChatGPT, because the first one I made produced the message: "Potential infinite loop detected"
-//the code with PROBLEM is at the botton
+//the code with PROBLEM is at the bottom
 function sumFibs(num) {
   
   let fibArr = [1, 1]; // Initialize the array with the first two Fibonacci numbers
