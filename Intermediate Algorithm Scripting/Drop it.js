@@ -8,7 +8,7 @@ function dropElements(arr, func) {
     if(!func(arr[i])) {
       myArr.shift(); // using "myArr" for "arr" and adding the code (i--;)    
     } else {
-      return myArr; 
+      break; 
     }
   }
   return myArr;
