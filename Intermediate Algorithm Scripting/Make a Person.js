@@ -2,7 +2,6 @@
 //I had a lot of help from ChatGpt and at the end, I had to check the answer, I didn't think about these two lines (let firstName = first;) and (let lastName = last;) 
 //This exercise was hard, the key to solving it was declaring the variables to store the values, but without having the properties "firstName" and "lastName"
 
-
 const Person = function(first, last) {
   
   let firstName = first;
