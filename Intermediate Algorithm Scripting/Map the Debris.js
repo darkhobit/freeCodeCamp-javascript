@@ -5,19 +5,17 @@ function orbitalPeriod(arr) {
   const earthRadius = 6367.4447;
   
   const newArr = arr.reduce(function(accumulator, currentValue) {
- // let { property1, property2 } = currentValue; // Destructure properties
+ 
+    const prop2Name = 'orbitalPeriod'; // Rename property2
+    const prop2Value = orbitalP(Object.values(currentValue)[1]); 
 
-  const renamedProperty = 'orbitalPeriod'; // Rename property2
+  // Add a new object to the accumulator with property1 and the renamed property2
+    accumulator.push({
+      [Object.keys(currentValue)[0]]: Object.values(currentValue)[0],
+      [prop2Name]: prop2Value
+    });
 
-  const orbitalPeriod = orbitalP(Object.values(currentValue)[1]);
-
-  // Add a new object to the accumulator with property1 and the renamed property
-  accumulator.push({
-    [Object.keys(currentValue)[0]]: Object.values(currentValue)[0],
-    [renamedProperty]: orbitalPeriod
-  });
-
-  return accumulator;
+    return accumulator;
   }, []);
 
 function orbitalP(avg) {
@@ -27,9 +25,9 @@ function orbitalP(avg) {
   let d = Math.sqrt(c)
   return Math.round(d*2*Math.PI);
 }
-  //*******
+  
   return newArr;
 }
 
 let result = orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}]);
-//console.log(result);
+console.log(result);
