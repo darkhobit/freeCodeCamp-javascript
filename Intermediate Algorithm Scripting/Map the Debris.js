@@ -9,7 +9,7 @@ function orbitalPeriod(arr) {
     const prop2Name = 'orbitalPeriod'; // Rename property2
     const prop2Value = orbitalP(Object.values(currentValue)[1]); 
 
-  // Add a new object to the accumulator with property1 and the renamed property2
+  // Add a new object to the accumulator with property1 and the new "name: value" for prpperty2
     accumulator.push({
       [Object.keys(currentValue)[0]]: Object.values(currentValue)[0],
       [prop2Name]: prop2Value
