@@ -21,7 +21,7 @@ function orbitalPeriod(arr) {
   }, []);
 
 function orbitalP(avg) {
-  let a = earthRadius + avg; console.log(a)
+  let a = earthRadius + avg;
   let b = Math.pow(a, 3);
   let c = b/GM;
   let d = Math.sqrt(c)
