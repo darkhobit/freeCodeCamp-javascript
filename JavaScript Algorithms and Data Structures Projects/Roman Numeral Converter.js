@@ -2,7 +2,7 @@
 
 function convertToRoman(num) {
  
-  if(num < 3999  && num > 0) {
+  if(num <= 3999  && num > 0) {
     const romans = [
     ['', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX'],
     ['', 'X', 'XX', 'XXX', 'XL', 'L', 'LX', 'LXX', 'LXXX', 'XC'],
@@ -18,13 +18,12 @@ function convertToRoman(num) {
        romNum.unshift(romans[count][numArr[i]]);
        count++;
     };
+    return romNum.join('');
 
   } else {
     return "The number must be between 0 and 3999";
   };
-
- return romNum.join('');
- }
+}
 
 let result = convertToRoman(-5000);
 console.log(result);
