@@ -16,6 +16,11 @@ function telephoneCheck(str) {
   } else if(onlyNum.length == 10 && onlyNum[0] !== 5) { //10 numbers and star in 5
     bol = false;
     
+  } else if(onlyNum.length == 10 && onlyNum[0] == 5) {
+    if(myStr[0] !== myStr[1] || myStr[0] !== myStr[2]) {
+      bol = false;
+    }
+
   } else if(onlyNum.length < 10) {
     bol= false;
 
@@ -33,7 +38,7 @@ function telephoneCheck(str) {
   return bol;
 }
 
-let result = telephoneCheck("555 555-5555");
+let result = telephoneCheck("555 5-55-555-5");
 console.log(result);
 /*
 let testStr = '555 555-5555';
