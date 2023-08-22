@@ -25,5 +25,5 @@ function convertToRoman(num) {
   };
 }
 
-let result = convertToRoman(-5000);
+let result = convertToRoman(10);
 console.log(result);
