@@ -2,7 +2,7 @@
 
 function palindrome(str) {
   //variant 1 of filtering
-  /*let filterStr = str.split(/[^a-zA-Z]/)
+  /*let newStr = str.split(/[^a-zA-Z0-9]/)
   .join('')
   .toLowerCase()
   .split(''); */
@@ -10,6 +10,7 @@ function palindrome(str) {
   //variant 2 of filtering
   let newStr = str.toLowerCase().split('')
   .filter(item => /[a-z0-9]/.test(item));
+  
   let len = newStr.length;
   let bol;
 
