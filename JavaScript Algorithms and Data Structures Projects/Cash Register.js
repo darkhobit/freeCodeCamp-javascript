@@ -1,5 +1,5 @@
 //https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/cash-register
-
+//click on the link for further details
 function checkCashRegister(price, cash, cid) {
 
   let change;    
@@ -7,21 +7,24 @@ function checkCashRegister(price, cash, cid) {
   .reduce((acc, num) => acc + num, 0)
   .toFixed(2));
   let changeDue = cash - price;
-
+  //if the change due is grater than the cash-in-drawer "INSUFFICIENT_FUNDS"
   if((changeDue) > cashInDrawer) {
     change = {status: "INSUFFICIENT_FUNDS", change: []};
+  //If the change due is exactly to the cash-in-drawer give the change
   } else if (changeDue == cashInDrawer) {
     change = {status: "CLOSED", change: cid};
+  //If the change due is lower than the ash-in-drawer I need to break down the change into the available currency
   } else if((changeDue) < cashInDrawer) {
     change = checkChangeForDue(changeDue, cid);
   }
-
+  
+  //This function is to  break down the change into the available currency (cash-in-drawer) in the register
   function checkChangeForDue(changeDue, cid) {
     let drawerArray = cid.map(item => item[1]);
     let referArray = [0.01, 0.05, 0.1, 0.25, 1, 5, 10, 20, 100];
     let dueArray = [];
     let changeDueLeft = changeDue;
-
+    
     for(let i = drawerArray.length - 1; i >= 0; i--) {
       if(drawerArray[i] == 0) {
         dueArray.unshift(0);
@@ -50,6 +53,7 @@ function checkCashRegister(price, cash, cid) {
           cidCash.push([currency[j], dueArray[j]]);
         }
       }
+      //I reversed the result array because the exercise asked to do it
       let returnedChange = cidCash.slice().reverse();
       return {status: "OPEN", change: returnedChange}
     }
